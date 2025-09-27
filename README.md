@@ -1,14 +1,19 @@
 # EXPERIMENT--01-ALP-FOR-8086
+
 Name : LATHIKESHWARAN J
+
 Roll no : 212222230072 
-Date of experiment : 27/02/2024
+
+Date of experiment : 27/09/2024
 
 
 
 
 
-## Aim: To Write and execute ALP on fundamental arithmetic and logical operations
-## Components required: 8086  emulator 
+## Aim:
+To Write and execute ALP on fundamental arithmetic and logical operations
+## Components required:
+8086  emulator 
 ## Theory 
 Running The Emulator (emu8086) Intro 8086 Microprocessor Emulator, also known as EMU8086, is an emulator of the program 8086 microprocessor. It is developed with a built-in 8086 assembler. This application is able to run programs on both PC desktops and laptops. This tool is primarily designed to copy or emulate hardware. These include the memory of a program, CPU, RAM, input and output devices, and even the display screen. There are instructions to follow when using this emulator. It can be executed into one of the two ways: backward or forward. There are also examples of assembly source code included. With this, it allows the programming of assembly language, reverse engineering, hardware architecture, and creating miniature operating system (OS). The user interface of 8086 Microprocessor Emulator is simple and easy to manage. There are five major buttons with icons and titles included. These are “Load”, “Reload”, “Step Back”, “Single Step”, and “Run”. Above those buttons is the menu that includes “File”, “View”, “Virtual Devices”, “Virtual Drive”, and “Help”. Below the buttons is a series of choices that are usually in numbers and codes. At the leftmost part is an area called “Registers” with an indication of either “H” or “L”. The other side is divided into two, which enables users to manually reset, debug, flag, etc. What is 8086 emulator emu8086 is an emulator of Intel 8086 (AMD compatible) microprocessor with integrated 8086 assembler and tutorials for beginners. Emulator runs programs like the real microprocessor in step-by-step mode. it shows registers, memory, stack, variables and flags.
 
@@ -75,50 +80,64 @@ Running The Emulator (emu8086) Intro 8086 Microprocessor Emulator, also known as
 
 
 
-## Programs for arithmetic  operations
-
-## Addition  of 8 bit ALP 
+## Programs for arithmetic operations
 ```
-mov al,56h
-mov bl,45h
-add al,bl
-hlt
+org 100h         
+
+mov AX,1234H    
+mov BX,5678H    
+
+add AX,BX      
+mov [2000H],AX  
+
+mov AX,1234H    
+sub AX,BX       
+mov [2002H],AX  
+
+mov AX,1234H     
+mov CX,2525H     
+mul CX          
+mov [2004H],AX  
+
+mov AX,0F325H   
+mov CL,05H       
+div CL           
+mov [2006H],AX  
+
+RET              
 ```
 
 
 ## Output  
-![Screenshot 2024-02-27 132424](https://github.com/LATHIKESHWARAN/EXPERIMENT--01-ALP-FOR-8086/assets/119393556/a7b1a964-12bb-46a3-807d-dc5facd02f34)
+<img width="1918" height="1137" alt="image" src="https://github.com/user-attachments/assets/a95c460f-1b86-40d5-bfb4-b5cb80545187" />
 
-## Subtraction   of 8 bit numbers  ALP 
-```
-mov al,56h
-mov bl,45h
-sub al,bl
-hlt                                         
-```
-## Output
-![Screenshot 2024-02-27 132335](https://github.com/LATHIKESHWARAN/EXPERIMENT--01-ALP-FOR-8086/assets/119393556/6836c69d-3943-4684-9960-9fdf71a09fca)
 
-## Multiplication alp 
+
+## Programs for logical operations
 ```
-mov al,45h
-mov bl,06h
-mul bl
-hlt
+org 100h        
+mov AX,1234H     
+mov BX,5678H   
+and AX,BX        
+mov [2000H],AX   
+
+mov AX,1234H     
+or AX,BX         
+mov [2002H],AX   
+
+mov AX,1234H     
+xor AX,BX        
+mov [2004H],AX   
+
+mov AX,1234H     
+not AX           
+mov [2006H],AX   
+
+RET
 ```
 ## Output  
-![Screenshot 2024-02-27 132852](https://github.com/LATHIKESHWARAN/EXPERIMENT--01-ALP-FOR-8086/assets/119393556/a34e15df-82f0-46d2-ae58-6af298f3e12a)
+<img width="1918" height="1137" alt="image" src="https://github.com/user-attachments/assets/b376b8be-a117-4b45-8191-806e2d47dd4c" />
 
-
-## Division alp 
-```
-mov al,45h
-mov bl,06h
-div bl
-hlt
-```
-## Output  
-![Screenshot 2024-02-27 133024](https://github.com/LATHIKESHWARAN/EXPERIMENT--01-ALP-FOR-8086/assets/119393556/96fbc4c7-2272-43cc-b973-c5362dad6e30)
 
 
 ## Result :
