@@ -80,63 +80,166 @@ Running The Emulator (emu8086) Intro 8086 Microprocessor Emulator, also known as
 
 
 
-## Programs for arithmetic operations
+## Addition
 ```
-org 100h         
-
-mov AX,1234H    
-mov BX,5678H    
-
-add AX,BX      
-mov [2000H],AX  
-
-mov AX,1234H    
-sub AX,BX       
-mov [2002H],AX  
-
-mov AX,1234H     
-mov CX,2525H     
-mul CX          
-mov [2004H],AX  
-
-mov AX,0F325H   
-mov CL,05H       
-div CL           
-mov [2006H],AX  
-
-RET              
+MOV CL,00
+MOV AX,[3001H]
+MOV BX,[3003H]
+ADD AX,BX
+JNC Loop
+INC CL
+Loop:
+MOV [3005H],AX
+MOV [3007H],CL
+HLT    
+          
 ```
 
 
 ## Output  
-<img width="1918" height="1137" alt="image" src="https://github.com/user-attachments/assets/a95c460f-1b86-40d5-bfb4-b5cb80545187" />
+<img width="1920" height="1080" alt="Screenshot (14)" src="https://github.com/user-attachments/assets/2f22746e-e45b-45b0-9867-a8823a5ca75c" />
 
-
-
-## Programs for logical operations
+## Subtraction
 ```
-org 100h        
-mov AX,1234H     
-mov BX,5678H   
-and AX,BX        
-mov [2000H],AX   
+MOV CL,00
+MOV AX,[3001H]
+MOV BX,[3003H]
+SUB AX,BX
+JNC Loop
+INC CL  
+NOT AX
+INC AX
+Loop:
+MOV [3005H],AX
+MOV [3007H],CL
+HLT
+```
 
-mov AX,1234H     
-or AX,BX         
-mov [2002H],AX   
+## Output
+<img width="1380" height="747" alt="image" src="https://github.com/user-attachments/assets/6cec46a8-cc68-4564-8785-5afd5177f0a0" />
 
-mov AX,1234H     
-xor AX,BX        
-mov [2004H],AX   
 
-mov AX,1234H     
-not AX           
-mov [2006H],AX   
-
-RET
+## Multiplication
+```
+MOV AX,[3001H]
+MOV BX,[3003H]
+MUL BX
+MOV [3005H],AX
+MOV [3007H],DX
+HLT 
 ```
 ## Output  
-<img width="1918" height="1137" alt="image" src="https://github.com/user-attachments/assets/b376b8be-a117-4b45-8191-806e2d47dd4c" />
+<img width="1255" height="930" alt="image" src="https://github.com/user-attachments/assets/fbb38c2f-d07d-4506-8e53-715887ffc08d" />
+
+## Division
+```
+MOV AX,[3001H]
+MOV BX,[3003H]
+DIV BX
+MOV [3005H],AX
+MOV [3007H],DX
+HLT
+
+```
+
+## Output
+<img width="1610" height="763" alt="image" src="https://github.com/user-attachments/assets/b1e4ca81-f14f-41ab-a4d6-1c5a278aaf24" />
+
+
+## AND Operation
+```
+MOV AX,[3001H]
+MOV BX,[3003H]
+AND AX,BX
+MOV [3005H],AX
+HLT
+
+```
+
+## Output
+<img width="1586" height="757" alt="image" src="https://github.com/user-attachments/assets/06ddd782-05fd-4d08-a937-1e603dac7b8b" />
+
+
+## OR Operation
+```
+MOV AX,[3001H]
+MOV BX,[3003H]
+OR AX,BX
+MOV [3005H],AX
+HLT
+
+```
+
+## Output
+<img width="1509" height="779" alt="image" src="https://github.com/user-attachments/assets/bf9e3d58-4bc0-430a-855a-5a2a7eab113f" />
+
+
+## NAND Operation
+```
+MOV AX,[3001H]
+MOV BX,[3003H]
+AND AX,BX
+NOT AX
+MOV [3005H],AX
+HLT
+```
+
+## Output
+<img width="1673" height="765" alt="image" src="https://github.com/user-attachments/assets/3e1dd32e-7499-48c2-a988-d36e09e13f0e" />
+
+
+## NOR Operation
+```
+MOV AX,[3001H]
+MOV BX,[3003H]
+OR AX,BX
+NOT AX
+MOV [3005H],AX
+HLT
+```
+## Output
+<img width="1340" height="759" alt="image" src="https://github.com/user-attachments/assets/cefab3d1-e970-4df4-a1f3-4997c91fcf9b" />
+
+
+
+## NOT Operation
+```
+MOV AX,[3001H]
+NOT AX
+MOV [3003H],AX
+HLT
+```
+## Output
+<img width="1652" height="770" alt="image" src="https://github.com/user-attachments/assets/d3f6dc7b-8ba2-47bc-8390-b74f3fe30cf9" />
+
+
+
+## XOR Operation
+```
+MOV AX,[3001H]
+MOV BX,[3003H]
+XOR AX,BX
+MOV [3005H],AX
+HLT
+
+```
+
+## Output
+<img width="1582" height="764" alt="image" src="https://github.com/user-attachments/assets/0a9ef384-1281-4eb3-89ed-2fbe66d01db1" />
+
+
+## XNOR Operation
+```
+MOV AX,[3001H]
+MOV BX,[3003H]
+XOR AX,BX
+NOT AX
+MOV [3005H],AX
+HLT
+```
+
+## Output
+<img width="1519" height="769" alt="image" src="https://github.com/user-attachments/assets/d528111d-fe08-499a-9f0d-917489221079" />
 
 
 
